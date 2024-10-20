@@ -56,6 +56,10 @@ jobs:
 
         python -m pip install kiwisolver --no-binary kiwisolver
 
+        pip cache kiwisolver
+
+        dir c:\users\runneradmin\appdata\local\pip\cache\wheels\74\5c\a8\b3b464707683a040699b7b954101906e4fbd6cde4bf19da1d2
+
     - name: Upload 
       uses: actions/upload-artifact@v4
       with:
