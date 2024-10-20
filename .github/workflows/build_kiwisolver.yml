@@ -54,7 +54,7 @@ jobs:
         # python setup.py bdist_wheel
         # move $env:GITHUB_WORKSPACE/kiwi/dist/*.whl ~
 
-        python -m pip install kiwisolver --no-binary kiwisolver
+        python -m pip install kiwisolver --no-binary kiwisolver -- -G"Visual Studio 17 2022" -A x64
 
         # pip cache dir kiwisolver
 
