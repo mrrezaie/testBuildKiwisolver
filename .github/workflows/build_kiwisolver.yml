@@ -66,6 +66,7 @@ jobs:
         import os
         for root,dirs,files in os.walk('c:/users/runneradmin/appdata/local/pip/cache/wheels'):
             for file in files:
+            print(root,file)
                 if file.startswith('kiwisolver') and file.endswith('.whl'):
                     break
                     kiwi = os.path.join(root,file)
