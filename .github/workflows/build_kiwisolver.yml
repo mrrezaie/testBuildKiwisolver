@@ -12,16 +12,8 @@ jobs:
     defaults:
       run:
         shell: powershell
-        # working-directory: ./scripts
-
 
     steps:
-
-    # - name: Install SWIG
-    #   run: |
-    #     choco install swig --version 4.1.1 --yes --limit-output --allow-downgrade
-    #     swig -swiglib
-      
 
     - name: Install Python
       uses: actions/setup-python@v4
@@ -33,11 +25,6 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
         python3 -m pip install setuptools wheel
-
-
-    # - name: Checkout repository
-    #   uses: actions/checkout@v4
-
 
     - name: Checkout cppy
       uses: actions/checkout@v4
@@ -53,20 +40,15 @@ jobs:
          path: kiwi
 
 
-    - name: Build 
-      id: build
+    - name: Build
       run: |
-        mkdir $env:GITHUB_WORKSPACE\\build
-        chdir $env:GITHUB_WORKSPACE\\build
-
-
-    - name: Build wheel file
-      run: |
-        chdir $env:GITHUB_WORKSPACE/cppy
-        python setup.py bdist_wheel
-        chdir $env:GITHUB_WORKSPACE/cppy/dist
-        python -m pip install cppy-0.0.0-py3-none-any.whl
+        # chdir $env:GITHUB_WORKSPACE/cppy
+        # python setup.py bdist_wheel
+        # chdir $env:GITHUB_WORKSPACE/cppy/dist
+        # python -m pip install cppy-0.0.0-py3-none-any.whl
         # move $env:GITHUB_WORKSPACE/cppy/dist/*.whl ~
+
+        python -m pip install cppy
 
         chdir $env:GITHUB_WORKSPACE/kiwi
         python setup.py bdist_wheel
