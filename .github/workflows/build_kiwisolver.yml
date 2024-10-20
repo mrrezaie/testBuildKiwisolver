@@ -64,14 +64,17 @@ jobs:
       run: |
         chdir $env:GITHUB_WORKSPACE/cppy
         python setup.py bdist_wheel
+        chdir $env:GITHUB_WORKSPACE/cppy/dist
+        python -m pip install cppy-0.0.0-py3-none-any.whl
+        # move $env:GITHUB_WORKSPACE/cppy/dist/*.whl ~
 
         chdir $env:GITHUB_WORKSPACE/kiwi
         python setup.py bdist_wheel
+        move $env:GITHUB_WORKSPACE/kiwi/dist/*.whl ~
 
-    # - name: Upload opensim-core
-    #   uses: actions/upload-artifact@v4
-    #   with:
-    #     name: opensim-core-${{ steps.build.outputs.version }}-win64-py312
-    #     # path: ~/opensim-core-install
-    #     path: ~/opensim-core-install/sdk/Python/dist/*.whl
-    #     compression-level: 0
+    - name: Upload 
+      uses: actions/upload-artifact@v4
+      with:
+        name: kiwi_win64_py312
+        path: ~/*.whl
+        compression-level: 0
