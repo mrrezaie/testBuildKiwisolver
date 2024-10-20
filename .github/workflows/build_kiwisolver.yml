@@ -48,11 +48,13 @@ jobs:
         # python -m pip install cppy-0.0.0-py3-none-any.whl
         # move $env:GITHUB_WORKSPACE/cppy/dist/*.whl ~
 
-        python -m pip install cppy
+        # python -m pip install cppy
 
-        chdir $env:GITHUB_WORKSPACE/kiwi
-        python setup.py bdist_wheel
-        move $env:GITHUB_WORKSPACE/kiwi/dist/*.whl ~
+        # chdir $env:GITHUB_WORKSPACE/kiwi
+        # python setup.py bdist_wheel
+        # move $env:GITHUB_WORKSPACE/kiwi/dist/*.whl ~
+
+        python -m pip install kiwisolver --no-binary kiwisolver
 
     - name: Upload 
       uses: actions/upload-artifact@v4
