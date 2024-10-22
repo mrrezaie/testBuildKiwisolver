@@ -54,7 +54,7 @@ jobs:
         # python setup.py bdist_wheel
         # move $env:GITHUB_WORKSPACE/kiwi/dist/*.whl ~
 
-        PATH
+        echo $env:path
         
         python -m pip install kiwisolver --no-binary kiwisolver
 
