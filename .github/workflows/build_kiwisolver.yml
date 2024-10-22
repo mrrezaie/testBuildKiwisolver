@@ -54,8 +54,8 @@ jobs:
         # python setup.py bdist_wheel
         # move $env:GITHUB_WORKSPACE/kiwi/dist/*.whl ~
 
-        echo $env:path
-        dir 'C:\Program Files\Microsoft Visual Studio'
+        # echo $env:path
+        # dir 'C:\Program Files\Microsoft Visual Studio'
         
         python -m pip install kiwisolver --no-binary kiwisolver
 
