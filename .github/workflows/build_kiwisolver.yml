@@ -55,7 +55,7 @@ jobs:
         # move $env:GITHUB_WORKSPACE/kiwi/dist/*.whl ~
 
         echo $env:path
-        dir C:\Program Files\Microsoft Visual Studio
+        dir 'C:\Program Files\Microsoft Visual Studio'
         
         python -m pip install kiwisolver --no-binary kiwisolver
 
