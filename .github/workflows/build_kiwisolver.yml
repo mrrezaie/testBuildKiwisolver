@@ -41,6 +41,11 @@ jobs:
 
 
     - name: Build
+      run: path
+      shell: cmd
+
+
+    - name: Build
       run: |
         # chdir $env:GITHUB_WORKSPACE/cppy
         # python setup.py bdist_wheel
