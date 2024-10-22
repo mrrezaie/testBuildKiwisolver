@@ -54,6 +54,8 @@ jobs:
         # python setup.py bdist_wheel
         # move $env:GITHUB_WORKSPACE/kiwi/dist/*.whl ~
 
+        path
+        
         python -m pip install kiwisolver --no-binary kiwisolver
 
 
@@ -63,7 +65,7 @@ jobs:
         import os
         for root,dirs,files in os.walk('c:/users/runneradmin/appdata/local/pip/cache/wheels'):
           for file in files:
-            print(root,file)
+            # print(root,file)
             if file.startswith('kiwisolver') and file.endswith('.whl'):
               kiwi = os.path.join(root,file)
               break
