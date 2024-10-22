@@ -41,11 +41,6 @@ jobs:
 
 
     - name: Build
-      run: path
-      shell: cmd
-
-
-    - name: Build
       run: |
         # chdir $env:GITHUB_WORKSPACE/cppy
         # python setup.py bdist_wheel
@@ -60,6 +55,7 @@ jobs:
         # move $env:GITHUB_WORKSPACE/kiwi/dist/*.whl ~
 
         echo $env:path
+        dir C:\Program Files\Microsoft Visual Studio
         
         python -m pip install kiwisolver --no-binary kiwisolver
 
